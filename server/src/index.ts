@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-// import { connectMongo } from "./config/db";
+import  connectMongo from "./config/db";
 
 // load environment variables
 dotenv.config();
@@ -16,10 +16,7 @@ app.use(express.json());
 console.log("cors enabled...");
 
 // connect to Mongo DB
-// connectMongo();
-console.log("server connected to db");
-
-
+connectMongo();
 
 // -- App Routes ------
 import userRoutes from "./routes/userRoutes";
