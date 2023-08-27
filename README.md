@@ -11,8 +11,9 @@ Ecommerce Backend built with TypeScript, Node.js, Express, and MongoDB
 
 # Install & Run
 0. Prerequisites
-   - Download and install docker
+   - Download and install docker: https://docs.docker.com/engine/install/
    - Clone this repo to your local machine
+     > git clone https://github.com/Bdiaz10/Ecommerce.git
    - Create .env file with MongoDB URI
      
 1. Navigate to file that containes docker image
