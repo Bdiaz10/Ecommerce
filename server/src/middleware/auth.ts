@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import {NextFunction} from "express";
+import { NextFunction } from "express";
 
 const authenticate = (req: any, res: any, next: NextFunction) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");

@@ -4,30 +4,41 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+var UserRole;
+(function (UserRole) {
+    UserRole["ADMIN"] = "ADMIN";
+    UserRole["USER"] = "USER";
+})(UserRole || (UserRole = {}));
 const userModel = new mongoose_1.default.Schema({
-    id: {
-        type: Number,
-        required: true,
-    },
     fName: {
         type: String,
-        required: true,
+        required: false,
     },
     lName: {
         type: String,
-        required: true,
+        required: false,
+    },
+    username: {
+        type: String,
+        required: false
     },
     email: {
         type: String,
         required: true,
     },
+    password: {
+        type: String,
+        required: true,
+    },
     role: {
         type: String,
+        default: UserRole.USER,
+        enum: Object.values(UserRole),
         required: true,
     },
     dateCreated: {
         type: Date,
-        default: Date.now,
+        default: Date.now(),
         required: true,
     },
 });

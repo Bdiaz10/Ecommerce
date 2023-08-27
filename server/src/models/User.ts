@@ -5,8 +5,7 @@ enum UserRole {
   USER = "USER"
 }
 
-interface UserInterface extends Document {
-  id?: number;
+interface UserInterface extends Document { 
   fName?: string;
   lName?: string;
   username?: string;
@@ -17,10 +16,6 @@ interface UserInterface extends Document {
 }
 
 const userModel: Schema<UserInterface> = new mongoose.Schema({
-  id: {
-    type: Number,
-    required: false,
-  },
   fName: {
     type: String,
     required: false,

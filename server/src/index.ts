@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import  connectMongo from "./config/db";
+import connectMongo from "./config/db";
 
 // load environment variables
 dotenv.config();
@@ -21,9 +21,15 @@ connectMongo();
 // -- App Routes ------
 import userRoutes from "./routes/userRoutes";
 import authRoutes from "./routes/authRoutes";
+import orderRoutes from "./routes/orderRoutes";
+import cartRoutes from "./routes/cartRoutes";
+import productRoutes from "./routes/productRoutes";
 
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/order', orderRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/product', productRoutes);
 
 
 

@@ -28,15 +28,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
-const controller = __importStar(require("../controllers/userController"));
-// GET ROUTES --------------------------------------------------
-router.get('/', controller.getAllUsers);
-router.get('/:id', controller.getUserById);
-// POST ROUTES -------------------------------------------------
-router.post('/', controller.createUser);
-// PATCH ROUTES -------------------------------------------------
-router.patch("/");
-// DELETE ROUTES -----------------------------------------------
-router.delete('/:id', controller.deleteUser);
+const controller = __importStar(require("../controllers/productController"));
+// CRUD product
+router.get("/", controller.getAllProducts);
+router.get("/:id", controller.getProductById);
+router.post("/", controller.createProduct);
+router.patch("/:id");
+router.delete("/:id", controller.deleteProduct);
 exports.default = router;
-//# sourceMappingURL=userRoutes.js.map
+//# sourceMappingURL=productRoutes.js.map
