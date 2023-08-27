@@ -25,10 +25,10 @@ const cartRoutes_1 = __importDefault(require("./routes/cartRoutes"));
 const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
 app.use('/api/user', userRoutes_1.default);
 app.use('/api/auth', authRoutes_1.default);
-app.use('api/order', orderRoutes_1.default);
-app.use('api/cart', cartRoutes_1.default);
-app.use('api/product', productRoutes_1.default);
+app.use('/api/order', orderRoutes_1.default);
+app.use('/api/cart', cartRoutes_1.default);
+app.use('/api/product', productRoutes_1.default);
 app.listen(process.env.PORT || 3001, () => {
-    console.log("app is avaible on port: " + "3001");
+    console.log("app is avaible on port: ${PORT}");
 });
 //# sourceMappingURL=index.js.map

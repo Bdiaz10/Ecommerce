@@ -29,11 +29,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 const controller = __importStar(require("../controllers/productController"));
-// CRUD product
+// GET ROUTES --------------------------------------------------
 router.get("/", controller.getAllProducts);
 router.get("/:id", controller.getProductById);
+// POST ROUTES --------------------------------------------------
 router.post("/", controller.createProduct);
+// PATCH ROUTES --------------------------------------------------
 router.patch("/:id");
+// DELETE ROUTES --------------------------------------------------
 router.delete("/:id", controller.deleteProduct);
 exports.default = router;
 //# sourceMappingURL=productRoutes.js.map

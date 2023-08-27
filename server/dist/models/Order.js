@@ -13,13 +13,13 @@ var OrderStatus;
 })(OrderStatus || (OrderStatus = {}));
 const orderSchema = new mongoose_1.default.Schema({
     user: {
-        type: Number,
+        type: String,
         ref: "User"
     },
     orderList: [
         {
             product: {
-                type: Number,
+                type: String,
                 ref: "Product"
             },
             quantity: Number,
@@ -27,14 +27,22 @@ const orderSchema = new mongoose_1.default.Schema({
         }
     ],
     totalPrice: {
-        type: Number
+        type: Number,
+        default: 0
     },
     status: {
         type: String,
-        enum: Object.values(OrderStatus)
+        enum: Object.values(OrderStatus),
+        default: OrderStatus.PROCESSING,
     },
-    createdAt: Date,
-    updatedAt: Date
+    createdAt: {
+        type: Date,
+        required: false
+    },
+    updatedAt: {
+        type: Date,
+        required: false
+    }
 });
 const Order = mongoose_1.default.model("Order", orderSchema);
 exports.default = Order;

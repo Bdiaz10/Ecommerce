@@ -11,9 +11,9 @@ const getAllUsers = async (req, res) => {
     try {
         const users = await User_1.default.find();
         if (!users) {
-            res.status(500).json({ messsage: "No Users in DB" });
+            return res.status(200).json({ messsage: "No Users in DB" });
         }
-        res.status(201).json(users);
+        return res.status(200).json(users);
     }
     catch (error) {
         res.status(500).json({ messsage: "Error retrieving users" });
@@ -25,12 +25,12 @@ const getUserById = async (req, res) => {
         const id = req.params.id;
         const user = await User_1.default.findById(id);
         if (!user) {
-            res.status(500).json({ message: "User not found with id: " + id });
+            return res.status(200).json({ message: "User not found with id: " + id });
         }
-        res.status(201).json(user);
+        return res.status(200).json(user);
     }
     catch (error) {
-        res.status(500).json({ message: "Failed to get user by id" });
+        return res.status(500).json({ message: "Failed to get user by id" });
     }
 };
 exports.getUserById = getUserById;
@@ -40,18 +40,18 @@ const createUser = async (req, res) => {
         const email = req.body.email;
         const user = await User_1.default.findOne({ email: email });
         if (user) {
-            res.status(500).json({ message: "User with email already exists" });
+            return res.status(200).json({ message: "User with email already exists" });
         }
         else {
             const { password } = req.body;
             const hashedPassword = await bcrypt_1.default.hash(password, 10);
             const newUser = new User_1.default({ ...req.body, password: hashedPassword });
             await newUser.save();
-            res.status(201).json({ message: "User Created" });
+            return res.status(201).json({ message: "User Created" });
         }
     }
     catch (error) {
-        res.status(500).json({ message: "Failed to Create User" });
+        return res.status(500).json({ message: "Failed to Create User" });
     }
 };
 exports.createUser = createUser;
@@ -60,13 +60,13 @@ const deleteUser = async (req, res) => {
     try {
         const user = await User_1.default.findOne({ _id: req.params.id });
         if (!user) {
-            res.status(500).json({ message: "User does not exist to delete" });
+            return res.status(500).json({ message: "User does not exist to delete" });
         }
         await User_1.default.findByIdAndDelete(req.params.id);
-        res.status(200).json({ message: "User deleted successfully" });
+        return res.status(200).json({ message: "User deleted successfully" });
     }
     catch (error) {
-        res.status(500).json({ message: "Failed to Delete User" });
+        return res.status(500).json({ message: "Failed to Delete User" });
     }
 };
 exports.deleteUser = deleteUser;
