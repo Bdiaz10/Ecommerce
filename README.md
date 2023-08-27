@@ -28,8 +28,3 @@ Ecommerce Backend built with TypeScript, Node.js, Express, and MongoDB
 
 Application should now be available on port 3001
 
-# Schemas
-
-# Endpoints
-
-# Example Requests
