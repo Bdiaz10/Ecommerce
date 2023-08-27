@@ -3,6 +3,7 @@ Ecommerce Backend built with TypeScript, Node.js, Express, and MongoDB
 
 # The goal of the project was to explore
 -  Building a REST API
+-  HTTP Status Codes
 -  User Authentication (JWT)
 -  Node.js & Express
 -  TypeScript
