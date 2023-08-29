@@ -1,5 +1,5 @@
 # Ecommerce
-Ecommerce Backend built with TypeScript, Node.js, Express, and MongoDB
+Robust and scalable e-commerce backend built with TypeScript, Node.js, Express, and MongoDB to power the online shopping experience. The backend is developed as a REST API, utilizing HTTP status codes for effective communication. User authentication is implemented using JSON Web Tokens (JWT) to ensure secure access to the platform.
 
 # The goal of the project was to explore
 -  Building a REST API
