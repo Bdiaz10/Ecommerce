@@ -17,7 +17,7 @@ Robust and scalable e-commerce backend built with TypeScript, Node.js, Express, 
      > git clone https://github.com/Bdiaz10/Ecommerce.git
    - Create .env file with your MongoDB URI
      
-1. Navigate to file that containes docker image
+1. Navigate to file that containes docker file
    > cd server
 
 2. Build docker
