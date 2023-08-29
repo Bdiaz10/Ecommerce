@@ -15,7 +15,7 @@ Robust and scalable e-commerce backend built with TypeScript, Node.js, Express, 
    - Download and install docker: https://docs.docker.com/engine/install/
    - Clone this repo to your local machine
      > git clone https://github.com/Bdiaz10/Ecommerce.git
-   - Create .env file with MongoDB URI
+   - Create .env file with your MongoDB URI
      
 1. Navigate to file that containes docker image
    > cd server
@@ -26,5 +26,5 @@ Robust and scalable e-commerce backend built with TypeScript, Node.js, Express, 
 3. Run docker
    > docker run -p 3001:3001 <app_name>
 
-Application should now be available on port 3001
+Application will now be available on port 3001
 
